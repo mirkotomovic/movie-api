@@ -1,0 +1,26 @@
+GET http://api.tvmaze.com/people/1
+    ?embed[]=crewcredits
+    &embed[]=castcredits
+
+###
+GET http://api.tvmaze.com/people/1
+curl --request GET \
+  --url http://api.tvmaze.com/people/1 \
+  --header 'user-agent: vscode-restclient'
+###
+GET http://api.tvmaze.com/people/1/castcredits
+###
+GET http://api.tvmaze.com/people/1/castcredits?embed=show
+###
+// Getting show
+GET http://api.tvmaze.com/shows/1
+###
+// get character
+GET http://api.tvmaze.com/characters/1
+###
+// searching query
+GET  http://api.tvmaze.com/search/shows?q=team
+###
+// Main show
+GET http://api.tvmaze.com/shows/81
+    ?embed=cast
