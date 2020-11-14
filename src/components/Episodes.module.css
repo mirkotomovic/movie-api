@@ -1,0 +1,47 @@
+details {
+    background: #fff;
+    font-size: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+    width: 400px;
+    height: 2rem;
+}
+
+details[open] {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 2px;
+    height: auto;
+}
+
+details[open] p {
+    padding: 0.2rem 0.3rem;
+}
+
+details[open]:first-child {
+    margin-top: 0;
+    margin-bottom: 16px;
+    border: none;
+}
+
+details[open]:last-child {
+    margin-top: 16px;
+    margin-bottom: 0px;
+    border: none;
+}
+
+summary {
+    outline: none;
+    padding: 0.3rem 20px;
+    color: #212121;
+    font-size: 15px;
+}
+
+summary:hover {
+    background: #eeeeee;
+}
+
+details[open] summary:hover {
+    background: none;
+}

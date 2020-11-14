@@ -42,27 +42,6 @@
   align-content: stretch;
 }
 
-.seasonList {
-  margin: 1rem;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-}
-
-.seasonButton {
-  color: black;
-  background-color: white;
-  padding: 0.5rem 1rem;
-}
-
-.seasonButtonActive {
-  background-color: dodgerblue;
-}
-
-.seasonButton:hover:not(.seasonButtonActive) {
-  background-color: #ddd;
-}
-
 .header {
   grid-area: header;
   background-color: #f1f1f1;
