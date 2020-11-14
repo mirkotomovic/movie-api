@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const baseUrl = 'http://api.tvmaze.com/';
+export const baseUrl = 'https://api.tvmaze.com/';
 export const peopleUrl = `${baseUrl}people/`;
 
 // const peopleInstance = axios.create({
