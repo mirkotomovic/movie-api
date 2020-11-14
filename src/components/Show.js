@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import {
-  Link,
   useParams
 } from "react-router-dom";
 import BasicInfo from 'components/BasicInfoShow'
@@ -22,7 +21,8 @@ const Show = () => {
       setCast(data._embedded.cast);
       setLoading(false);
     });
-  }, [])
+  }, [showId])
+
   if (loading) {
     return (<>
       <div className="pageTitle"><h1>Loading...</h1></div>
