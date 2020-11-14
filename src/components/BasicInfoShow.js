@@ -4,7 +4,8 @@ import styles from 'components/BasicInfoShow.module.css';
 const BasicInfoShow = ({ props }) => {
   return (
     <section className={styles.basicSection}>
-      <img src={props.image ? props.image.original : "#"}
+      <img 
+        src={props.image ? props.image.original : "#"}
         onError={addDefaultSrc}
         alt={props.name}
         height="400px"

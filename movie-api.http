@@ -23,4 +23,5 @@ GET  http://api.tvmaze.com/search/shows?q=team
 ###
 // Main show
 GET http://api.tvmaze.com/shows/81
-    ?embed=cast
+    ?embed[]=seasons
+    &embed[]=episodes
