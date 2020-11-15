@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import {
-  useParams
-} from "react-router-dom";
 import BasicInfo from 'components/BasicInfoShow'
 import CrewShow from 'components/CrewShow'
 import CastShow from 'components/CastShow'
 import Season from 'components/Season'
-import { getBasicInfo, seasonsEpisodes } from 'services/show.service'
+import { getBasicInfo } from 'services/show.service'
+import {
+  useRouteMatch,
+  Switch,
+  Route,
+  NavLink,
+  useParams
+} from "react-router-dom";
 
 const Show = () => {
   const { showId } = useParams();
+  let { path, url } = useRouteMatch();
   const [showInfo, setShowInfo] = useState({});
   const [crew, setCrew] = useState([]);
   const [cast, setCast] = useState([]);
@@ -32,12 +37,30 @@ const Show = () => {
     )
   } else {
     return (<>
-      <div className="pageTitle"><h1>{showInfo.name}</h1></div>
+      <div className="pageTitle">
+        <h1>{showInfo.name}</h1>
+        <div className="btn-container">
+          <NavLink exact activeClassName="active-btn" className="job-btn" to={`${url}`}>Home</NavLink>
+          <NavLink activeClassName="active-btn" className="job-btn" to={`${url}/cast`}>Cast</NavLink>
+          <NavLink activeClassName="active-btn" className="job-btn" to={`${url}/crew`}>Crew</NavLink>
+          <NavLink activeClassName="active-btn" className="job-btn" to={`${url}/seasons`}>Seasons</NavLink>
+        </div>
+      </div>
       <div className="showContent">
-        <BasicInfo props={showInfo}></BasicInfo>
-        <CastShow props={cast}></CastShow>
-        <CrewShow props={crew}></CrewShow>
-        <Season props={showId} />
+        <Switch>
+          <Route exact path={`${path}/cast`}>
+            <CastShow props={cast}></CastShow>
+          </Route>
+          <Route exact path={`${path}/crew`}>
+            <CrewShow props={crew}></CrewShow>
+          </Route>
+          <Route exact path={`${path}/seasons`}>
+            <Season props={showId} />
+          </Route>
+          <Route exact path={`${path}/`}>
+            <BasicInfo props={showInfo}></BasicInfo>
+          </Route>
+        </Switch>
       </div>
     </>
     )

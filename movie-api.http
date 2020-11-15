@@ -3,10 +3,8 @@ GET http://api.tvmaze.com/people/1
     &embed[]=castcredits
 
 ###
-GET http://api.tvmaze.com/people/1
-curl --request GET \
-  --url http://api.tvmaze.com/people/1 \
-  --header 'user-agent: vscode-restclient'
+GET http://api.tvmaze.com/people/1?embed[]=castcredits&embed[]=crewcredits
+
 ###
 GET http://api.tvmaze.com/people/1/castcredits
 ###
