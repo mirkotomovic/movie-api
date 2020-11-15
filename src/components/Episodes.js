@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from 'components/Episodes.module.css';
 
 const Episodes = ({ props }) => {
   return (
