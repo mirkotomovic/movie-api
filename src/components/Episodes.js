@@ -1,4 +1,5 @@
 import React from 'react'
+import 'components/Episodes.css'
 
 const Episodes = ({ props }) => {
   return (
