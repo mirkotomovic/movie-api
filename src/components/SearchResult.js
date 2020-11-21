@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import ShowCard from 'components/ShowCard';
 import { useForm } from "react-hook-form";
+
+import ShowCard from 'components/ShowCard';
 import { searchShow } from 'services/show.service';
+
+import { AiOutlineSearch } from "react-icons/ai";
 
 export const SearchResult = () => {
   const [shows, setShows] = useState([]);
@@ -12,14 +15,12 @@ export const SearchResult = () => {
   }
   return (
     <>
-      <form className="searchForm" onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          Show:
-          <input ref={register} type="text" name="query" placeholder="Show name" />
-        </label>
-        <input type="submit" value="Submit" />
+      <form className="search-form" onSubmit={handleSubmit(onSubmit)}>
+        <input className="form-field" ref={register} type="text" name="query" placeholder="Show name" />
+        {/* <input type="submit" value="Submit" /> */}
+        <button className="form-btn"><AiOutlineSearch /></button>
       </form>
-      <div className="resultContent">
+      <div className="result-content">
         {shows.map(obj => {
           return (
             <Link key={obj.show.id} to={"/show/" + obj.show.id}>

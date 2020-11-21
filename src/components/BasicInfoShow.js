@@ -1,17 +1,16 @@
 import React from 'react'
-import styles from 'components/BasicInfoShow.module.css';
 
 const BasicInfoShow = ({ props }) => {
   return (
-    <section className={styles.basicSection}>
-      <img 
+    <section className="basic-section">
+      <img
         src={props.image ? props.image.original : "#"}
         onError={addDefaultSrc}
         alt={props.name}
         height="400px"
         width="280px" />
-      <div className={styles.aboutShow}>
-      <ul>
+      <div className="about-show">
+        <ul>
           <li><b>Language: </b>{props.language}</li>
           <li><b>Runtime: </b>{props.runtime} minutes</li>
           <li><b>Premiered: </b>{props.premiered}</li>
@@ -23,8 +22,7 @@ const BasicInfoShow = ({ props }) => {
               {props.network ? props.network.name : "link"}
             </a></li>
         </ul>
-        <p>{props.summary.replace(/(<([^>]+)>)/ig, '')}</p>
-
+        <p className="show-summary">{props.summary.replace(/(<([^>]+)>)/ig, '')}</p>
       </div>
 
     </section>

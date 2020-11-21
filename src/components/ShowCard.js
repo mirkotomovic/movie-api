@@ -1,15 +1,14 @@
 import React from 'react'
-import styles from 'components/ShowCard.module.css';
 
 const ShowCard = ({ props }) => {
-    return (<div className={styles.card}>
-        <img className={styles.showImage}
+    return (<div className="show-card">
+        <img
             onError={addDefaultSrc}
             src={props.image ? props.image.medium : "#"}
             alt={props.name}
             width="150py"
             height="210px" />
-        <div className={styles.container}>
+        <div className="card-text">
             <h4><b>{props.name}</b></h4>
         </div>
     </div>

@@ -8,31 +8,19 @@
     ".  search  ."
     ". content ."
     "footer  footer  footer";
+
+  color: var(--text);
+  background: var(--bg);
 }
 
-.searchForm {
+.page-title {
   grid-area: search;
   justify-self: center;
   align-self: center;
+  text-align: center;
 }
 
-.resultContent {
-  grid-area: content;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-start;
-}
-
-.pageTitle {
-  grid-area: search;
-  justify-self: center;
-  align-self: center;
-}
-
-.showContent {
+.show-content {
   grid-area: content;
   display: flex;
   flex-direction: column;
@@ -42,18 +30,12 @@
   align-content: stretch;
 }
 
-.headerContainer {
-  grid-area: header;
-}
-
-/* Sidebar buttons */
 .btn-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 2rem;
-  margin-top: -1rem;
+  margin-top: 1rem;
 }
 
 .job-btn {
@@ -62,15 +44,25 @@
   margin: 0 0.5rem;
   transition: all 0.3s linear;
   line-height: 1;
-  color: black;
+  color: var(--nav-item-text);
 }
 
 .job-btn:hover {
-  color: gray;
+  color: darkgray;
 }
 
 .active-btn {
-  color: cyan;
+  color: var(--blue);
+}
+
+/*
+=========================
+      Header
+=========================
+*/
+.header-container {
+  grid-area: header;
+  background-color: var(--nav-bg);
 }
 
 .navbar {
@@ -78,59 +70,308 @@
   position: relative;
   justify-content: flex-end;
   align-items: flex-end;
-  background-color: #f1f1f1;
+  background-color: var(--nav-bg);
 }
 
-.brand-title {
-  font-size: 1.5rem;
-  margin: 0.5rem 2rem;
-}
-
-.navbar-links {
+.navbar-items {
   height: 100%;
 }
 
-.navbar-links ul {
+.navbar-items {
   display: flex;
-  margin: 0;
-  padding: 0;
 }
 
-.navbar-links li {
+.navbar-link {
   list-style: none;
 }
 
-.navbar-links li a {
-  display: block;
-  text-decoration: none;
-  color: black;
-  padding: 1rem;
+.navbar-link:hover {
+  background-color: var(--nav-bg-hov);
 }
 
-.navbar-links li:hover {
-  background-color: #f6f6f6;
+.navbar-link a {
+  display: block;
+  text-decoration: none;
+  color: var(--nav-item-text);
+  padding: 1rem;
 }
 
 .toggle-button {
   position: absolute;
-  top: .75rem;
+  top: 0.65rem;
   right: 1rem;
   display: none;
   flex-direction: column;
-  justify-content: space-between;
-  width: 2rem;
+  justify-content: space-around;
+  align-items: center;
+  width: 2.5rem;
   height: 2rem;
+  background-color: var(--nav-button);
+  border-color: var(--nav-button);
+  border-radius: 5px;
 }
 
 .bar {
-  width: 2rem;
-  height: 0.2rem;
-  background-color: black;
-  margin: 2px -1rem;
+  width: 90%;
+  height: 14%;
+  background-color: var(--hamburger-bar);
+  border-radius: 30%;
+}
+
+/*
+=========================
+      Footer
+=========================
+*/
+
+.footer {
+  grid-area: footer;
+  background-color: var(--footer-bg);
+  margin-top: 1.5rem;
+}
+
+/*
+=========================
+      Show and people 
+        search form
+=========================
+*/
+
+.search-form {
+  grid-area: search;
+  justify-self: center;
+  align-self: center;
+}
+
+.form-field {
+  border: 3px solid var(--form-color);
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  height: 2rem;
+  outline: none;
+}
+
+.form-btn {
+  background: var(--form-color);
+  border: 3px solid var(--form-color);
+  border-radius: 0 5px 5px 0;
+  height: 2rem;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/*
+=========================
+      Search results
+=========================
+*/
+.result-content {
+  grid-area: content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+}
+
+.show-card {
+  box-shadow: 0 4px 8px 0 var(--light-shadow);
+  transition: 0.3s;
+  width: 150px;
+  height: 260px;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.show-card:hover {
+  box-shadow: 0 8px 16px 0 var(--light-shadow);
+}
+
+.card-text {
+  padding: 2px 16px;
+  text-decoration: none;
+}
+
+/*
+=========================
+      Show
+=========================
+*/
+
+/*
+=========================
+      Basic show info
+=========================
+*/
+
+.basic-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.about-show {
+  width: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 1rem 0 2rem;
+}
+
+.about-show ul {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.show-summary {
+  margin-top: auto;
+}
+
+/*
+=========================
+      Cast and crew 
+=========================
+*/
+
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+  align-content: space-evenly;
+}
+
+.person-card {
+  box-shadow: 0 4px 8px 0 var(--light-shadow);
+  transition: 0.3s;
+  width: 100px;
+  height: 180px;
+  margin: 0.5rem 0.4rem;
+  font-size: x-small;
+}
+
+.person-card:hover {
+  box-shadow: 0 8px 16px 0 var(--light-shadow);
+}
+
+.container {
+  min-height: 15px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+  align-content: space-evenly;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+/*
+=========================
+      Seasons
+=========================
+*/
+
+.season-section {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.season-list {
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 80vw;
+}
+
+.season-button {
+  color: var(--text);
+  background-color: var(--season-btn);
+  padding: 0.5rem 1rem;
+}
+
+.season-button-active {
+  background-color: var(--blue);
+}
+
+.season-button:hover:not(.season-button-active) {
+  background-color: var(--season-btn-hover);
+}
+
+/*
+=========================
+      Episodes
+=========================
+*/
+
+details {
+  background: var(--season-btn);
+  font-size: 16px;
+  border-bottom: 1px solid var(--gray4);
+  box-shadow: 0 0 2px var(--light-shadow), 0 2px 4px var(--dark-shadow);
+  width: 400px;
+  height: 2rem;
+  margin-left: 1rem;
+}
+
+details[open] {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 2px;
+  height: auto;
+}
+
+details[open] p {
+  padding: 0.2rem 0.3rem;
+}
+
+details[open]:first-child {
+  margin-top: 0;
+  margin-bottom: 16px;
+  border: none;
+}
+
+details[open]:last-child {
+  margin-top: 16px;
+  margin-bottom: 0px;
+  border: none;
+}
+
+summary {
+  outline: none;
+  padding: 0.3rem 20px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+summary:hover {
+  background: var(--season-btn-hover);
+}
+
+details[open] summary:hover {
+  background: none;
 }
 
 @media (max-width: 800px) {
+  /*
+  =========================
+        Header
+  =========================
+  */
   .navbar {
+    margin-left: auto;
+    width: 10rem;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -139,31 +380,69 @@
     display: flex;
   }
 
-  .navbar-links {
+  .navbar-items {
     display: none;
-    width: 100%;
-  }
-
-  .navbar-links ul {
-    width: 100%;
+    margin-left: auto;
+    margin-top: 2.5rem;
+    width: 10rem;
     flex-direction: column;
   }
 
-  .navbar-links ul li {
+  .navbar-link {
+    margin-top: 0.25rem;
     text-align: center;
   }
 
-  .navbar-links ul li a {
-    padding: .5rem 1rem;
+  .navbar-link a {
+    padding: 0.5rem 1rem;
   }
 
-  .navbar-links.active {
+  .navbar-items.active {
     display: flex;
   }
-}
 
-.footer {
-  grid-area: footer;
-  background-color: #f1f1f1;
-  margin-top: 1.5rem;
+  /*
+  =========================
+        Footer
+  =========================
+  */
+
+  /*
+  =========================
+        Show and people 
+          search form
+  =========================
+  */
+
+  /*
+  =========================
+        Basic show info
+  =========================
+  */
+
+  /*
+  =========================
+        Basic show info
+  =========================
+  */
+
+  .basic-section {
+    flex-wrap: wrap;
+  }
+
+  .about-show ul {
+    margin: 1rem;
+  }
+
+  /*
+  =========================
+        Cast and crew 
+  =========================
+  */
+
+  /*
+  =========================
+        Episodes
+  =========================
+  */
 }

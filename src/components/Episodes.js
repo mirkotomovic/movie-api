@@ -1,5 +1,4 @@
-import React from 'react'
-import 'components/Episodes.css'
+import React from 'react';
 
 const Episodes = ({ props }) => {
   return (

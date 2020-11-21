@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import styles from 'components/Season.module.css';
 import Episodes from 'components/Episodes';
 import { seasonsEpisodes } from 'services/show.service'
 
@@ -20,20 +19,20 @@ const Season = ({ props }) => {
 
   if (loadingSeasons) {
     return (<>
-      <div className="pageTitle"><h1>Loading...</h1></div>
+      <div className="page-title"><h1>Loading...</h1></div>
     </>
     )
   }
   const { name, image, premiereDate, endDate, episodeOrder } = seasons[seasonNumber - 1]
   return (
-    <section className={styles.seasonSection}>
-      <div className={styles.seasonList}>
+    <section className="season-section">
+      <div className="season-list">
         {seasons.map(item => {
           return (
             <button
               key={item.id}
               onClick={() => setSeasonNumber(item.number)}
-              className={`${styles.seasonButton} ${item.number === seasonNumber && styles.seasonButtonActive}`}
+              className={`season-button ${item.number === seasonNumber && "season-button-active"}`}
             >
               {item.number}
             </button>
@@ -47,7 +46,7 @@ const Season = ({ props }) => {
           alt={name}
           height="400px"
           width="280px" />
-        <ul>
+        <ul style={{ padding: "0.5rem 0 1rem 2rem" }}>
           <li><b>Premiere date: </b>{premiereDate}</li>
           <li><b>End date: </b>{endDate}</li>
           <li><b>Number of episodes: </b>{episodeOrder}</li>

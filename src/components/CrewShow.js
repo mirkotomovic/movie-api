@@ -1,7 +1,4 @@
 import React from 'react'
-import styles from 'components/CrewShow.module.css';
-
-
 
 const CrewShow = ({ props }) => {
   return (<>
@@ -9,14 +6,14 @@ const CrewShow = ({ props }) => {
     <section>
       {props.map(crew => {
         return (
-          <div key={crew.person.id + crew.type} className={styles.card}>
+          <div key={crew.person.id + crew.type} className="person-card">
             <img
               onError={addDefaultSrc}
               src={crew.person.image ? crew.person.image.medium : "#"}
               alt={crew.person.name}
               width="100py"
               height="150px" />
-              <div className={styles.container}>
+              <div className="container">
                 <small><b>{crew.type}: </b></small>
                 <small>{crew.person.name}</small>
               </div>

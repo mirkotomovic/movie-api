@@ -32,12 +32,12 @@ const Show = () => {
 
   if (loading) {
     return (<>
-      <div className="pageTitle"><h1>Loading...</h1></div>
+      <div className="page-title"><h1>Loading...</h1></div>
     </>
     )
   } else {
     return (<>
-      <div className="pageTitle">
+      <div className="page-title">
         <h1>{showInfo.name}</h1>
         <div className="btn-container">
           <NavLink exact activeClassName="active-btn" className="job-btn" to={`${url}`}>Home</NavLink>
@@ -46,7 +46,7 @@ const Show = () => {
           <NavLink activeClassName="active-btn" className="job-btn" to={`${url}/seasons`}>Seasons</NavLink>
         </div>
       </div>
-      <div className="showContent">
+      <div className="show-content">
         <Switch>
           <Route exact path={`${path}/cast`}>
             <CastShow props={cast}></CastShow>
