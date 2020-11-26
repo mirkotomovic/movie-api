@@ -6,8 +6,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
 code {
@@ -24,7 +22,7 @@ code {
   --gray5: #2a2e35;
   --gray6: #12181b;
 
-  --blue: #39b8f3;
+  --blue: #6c63ff;
 }
 
 .light {
@@ -74,7 +72,6 @@ code {
   --dark-shadow: rgba(255, 255, 255, 0.4);
 
   --footer-bg: var(--gray6);
-
 }
 
 
@@ -84,4 +81,8 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  color: var(--text);
 }

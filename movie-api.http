@@ -23,3 +23,8 @@ GET  http://api.tvmaze.com/search/shows?q=team
 GET http://api.tvmaze.com/shows/81
     ?embed[]=seasons
     &embed[]=episodes
+###
+GET http://api.tvmaze.com/people/1?embed[]=castcredits&embed[]=crewcredits
+
+### 
+GET http://api.tvmaze.com/people/1/castcredits?embed=show

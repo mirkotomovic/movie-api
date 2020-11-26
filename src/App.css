@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr minmax(350px, 4fr) 1fr;
-  grid-template-rows: 3rem minmax(3rem, 5rem) 1fr 3rem;
+  grid-template-rows: 3rem auto 1fr 3rem;
   grid-template-areas:
     "header header header"
     ".  search  ."
@@ -11,6 +11,8 @@
 
   color: var(--text);
   background: var(--bg);
+
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
 .page-title {
@@ -36,6 +38,7 @@
   flex-direction: row;
   justify-content: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .job-btn {
@@ -138,26 +141,42 @@
         search form
 =========================
 */
-
-.search-form {
+.search-container {
   grid-area: search;
   justify-self: center;
   align-self: center;
 }
 
+.search-label {
+  display: block;
+  background: var(--form-color);
+  border: 3px solid var(--form-color);
+  border-radius: 5px 5px 0 0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.search-svg {
+  height: 12rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 .form-field {
   border: 3px solid var(--form-color);
   border-right: none;
-  border-radius: 5px 0 0 5px;
+  border-radius: 0 0 0 5px;
   height: 2rem;
+  width: 80%;
   outline: none;
 }
 
 .form-btn {
   background: var(--form-color);
   border: 3px solid var(--form-color);
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 0 5px 0;
   height: 2rem;
+  width: 20%;
   text-align: center;
   color: #ffffff;
   cursor: pointer;
@@ -172,6 +191,7 @@
   grid-area: content;
   display: flex;
   flex-direction: row;
+  margin-top: 1rem;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -276,6 +296,61 @@ h2 {
 
 /*
 =========================
+      Person page
+=========================
+*/
+
+.person-container {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.person-basic {
+  display: flex;
+  margin: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.about-person {
+  align-self: center;
+  list-style-type: none;
+  margin: 1rem;
+}
+
+.cast-person {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  margin: 1rem;
+}
+.cast-person h1 {
+  width: 80vw;
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.crew-person {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  margin: 1rem;
+}
+
+.crew-person h1 {
+  width: 80vw;
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+/*
+=========================
       Seasons
 =========================
 */
@@ -371,20 +446,20 @@ details[open] summary:hover {
 =========================
 */
 .theme-toggler {
-  display:flex;
+  display: flex;
   align-items: center;
   padding: 1rem;
 }
 
 .switch {
   display: block;
-  height: 34px;
+  height: 17px;
   position: relative;
-  width: 60px;
+  width: 30px;
 }
 
 .switch input {
-  display:none;
+  display: none;
 }
 
 .slider {
@@ -395,18 +470,18 @@ details[open] summary:hover {
   position: absolute;
   right: 0;
   top: 0;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .slider:before {
   background-color: var(--nav-button);
-  bottom: 4px;
+  bottom: 2px;
   content: "";
-  height: 26px;
-  left: 4px;
+  height: 13px;
+  left: 2px;
   position: absolute;
-  transition: .4s;
-  width: 26px;
+  transition: 0.4s;
+  width: 13px;
 }
 
 input:checked + .slider {
@@ -414,15 +489,41 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(13px);
 }
 
 .slider.round {
-  border-radius: 34px;
+  border-radius: 12px;
 }
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/*
+=========================
+      About
+=========================
+*/
+
+.about {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  margin: 2rem;
+}
+
+.about h1 {
+  align-self: center;
+  margin-bottom: 2rem;
+}
+
+.about p {
+  align-self: flex-start;
 }
 
 @media (max-width: 800px) {
@@ -445,14 +546,16 @@ input:checked + .slider:before {
   .navbar-items {
     display: none;
     margin-left: auto;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     width: 10rem;
     flex-direction: column;
+    position: relative;
+    top: 3rem;
   }
 
   .navbar-link {
-    margin-top: 0.25rem;
     text-align: center;
+    background-color: var(--nav-bg);
   }
 
   .navbar-link a {

@@ -1,31 +1,21 @@
 import React from 'react'
+import PersonCard from 'components/PersonCard';
+import { Link } from "react-router-dom";
 
 const CastShow = ({ props }) => {
   return (<>
-  <h2>Cast members</h2>
+    <h2>Cast members</h2>
     <section>
-      {props.map(crew => {
+      {props.map(cast => {
         return (
-          <div key={crew.person.id} className="person-card">
-            <img
-              onError={addDefaultSrc}
-              src={crew.person.image ? crew.person.image.medium : "#"}
-              alt={crew.person.name}
-              width="100py"
-              height="150px" />
-              <div className="container">
-                <small>{crew.person.name}</small>
-              </div>
-          </div>
+          <Link key={cast.person.id} to={"/people/" + cast.person.id}>
+            <PersonCard key={cast.person.id} person={cast} />
+          </Link>
         )
       })}
     </section>
-    </>
+  </>
   )
-}
-
-const addDefaultSrc = (ev) => {
-  ev.target.src = 'https://via.placeholder.com/280x400?text=No+image+found'
 }
 
 export default CastShow

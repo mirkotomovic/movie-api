@@ -1,4 +1,6 @@
 import React from 'react'
+import PersonCard from 'components/PersonCard';
+import { Link } from "react-router-dom";
 
 const CrewShow = ({ props }) => {
   return (<>
@@ -6,27 +8,14 @@ const CrewShow = ({ props }) => {
     <section>
       {props.map(crew => {
         return (
-          <div key={crew.person.id + crew.type} className="person-card">
-            <img
-              onError={addDefaultSrc}
-              src={crew.person.image ? crew.person.image.medium : "#"}
-              alt={crew.person.name}
-              width="100py"
-              height="150px" />
-              <div className="container">
-                <small><b>{crew.type}: </b></small>
-                <small>{crew.person.name}</small>
-              </div>
-          </div>
+          <Link key={crew.person.id} to={"/people/" + crew.person.id}>
+            <PersonCard key={crew.person.id + crew.type} person={crew} />
+          </Link>
         )
       })}
     </section>
     </>
   )
-}
-
-const addDefaultSrc = (ev) => {
-  ev.target.src = 'https://via.placeholder.com/280x400?text=No+image+found'
 }
 
 export default CrewShow
