@@ -6,6 +6,7 @@ import ShowCard from 'components/ShowCard';
 import { searchShow } from 'services/show.service';
 
 import { AiOutlineSearch } from "react-icons/ai";
+import ShowSearchSVG from "components/svg/gummy-tv-room.svg";
 
 export const SearchResult = () => {
   const [shows, setShows] = useState([]);
@@ -15,11 +16,14 @@ export const SearchResult = () => {
   }
   return (
     <>
-      <form className="search-form" onSubmit={handleSubmit(onSubmit)}>
-        <input className="form-field" ref={register} type="text" name="query" placeholder="Show name" />
-        {/* <input type="submit" value="Submit" /> */}
-        <button className="form-btn"><AiOutlineSearch /></button>
-      </form>
+      <div className="search-container">
+        <img className="search-svg" src={ShowSearchSVG} alt="SVG" />
+        <form className="search-form" onSubmit={handleSubmit(onSubmit)}>
+          <label className="search-label" htmlFor="search">Show search:</label>
+          <input className="form-field" ref={register} type="text" id="search" name="query" placeholder="Show name" />
+          <button className="form-btn"><AiOutlineSearch /></button>
+        </form>
+      </div>
       <div className="result-content">
         {shows.map(obj => {
           return (
