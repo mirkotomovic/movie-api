@@ -3,10 +3,6 @@ import axios from 'axios';
 export const baseUrl = 'https://api.tvmaze.com/';
 export const searchUrl = `${baseUrl}search/shows?q=`;
 
-// const peopleInstance = axios.create({
-//     baseURL: 'http://api.tvmaze.com/',
-//     timeout: 1000
-// });
 const matchWhitespace = /\s/g;
 
 export const searchShow = async ({ query }) => {
