@@ -522,10 +522,6 @@ input:checked + .slider:before {
   margin-bottom: 2rem;
 }
 
-.about p {
-  align-self: flex-start;
-}
-
 @media (max-width: 800px) {
   /*
   =========================
