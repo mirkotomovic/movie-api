@@ -4,10 +4,10 @@
   grid-template-columns: 1fr minmax(350px, 4fr) 1fr;
   grid-template-rows: 3rem auto 1fr 3rem;
   grid-template-areas:
-    "header header header"
-    ".  search  ."
-    ". content ."
-    "footer  footer  footer";
+    'header header header'
+    '.  search  .'
+    '. content .'
+    'footer  footer  footer';
 
   color: var(--text);
   background: var(--bg);
@@ -201,8 +201,8 @@
 .show-card {
   box-shadow: 0 4px 8px 0 var(--light-shadow);
   transition: 0.3s;
-  width: 150px;
-  height: 260px;
+  width: 225px;
+  height: 365px;
   margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
@@ -269,10 +269,9 @@ section {
 .person-card {
   box-shadow: 0 4px 8px 0 var(--light-shadow);
   transition: 0.3s;
-  width: 100px;
-  height: 180px;
+  width: 150px;
+  height: 255px;
   margin: 0.5rem 0.4rem;
-  font-size: x-small;
 }
 
 .person-card:hover {
@@ -476,7 +475,7 @@ details[open] summary:hover {
 .slider:before {
   background-color: var(--nav-button);
   bottom: 2px;
-  content: "";
+  content: '';
   height: 13px;
   left: 2px;
   position: absolute;

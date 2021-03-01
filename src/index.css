@@ -27,7 +27,7 @@ code {
 
 .light {
   --bg: var(--gray0);
-  
+
   --nav-bg: var(--gray2);
   --nav-bg-hov: var(--gray0);
   --nav-button: var(--gray2);
@@ -49,10 +49,9 @@ code {
   --footer-bg: var(--gray2);
 }
 
-
 .dark {
   --bg: var(--gray4);
-  
+
   --nav-bg: var(--gray6);
   --nav-bg-hov: var(--gray4);
   --nav-button: var(--gray6);
@@ -73,7 +72,6 @@ code {
 
   --footer-bg: var(--gray6);
 }
-
 
 *,
 *::after,
